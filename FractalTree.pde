@@ -1,7 +1,6 @@
 private double fractionLength = .8; 
 private int smallestBranch = 10; 
 private double branchAngle = 0.5;  
-// original: 0.5
 public int branches = 90;
 public void setup() 
 {   
@@ -9,31 +8,23 @@ public void setup()
 } 
 public void draw() 
 {   
-  // branchAngle = mouseY/50;
   background(0);   
   stroke(189, 255, 220);   
   strokeWeight(.25);
   line(320, 480, 320, 380);   
   drawBranches(320, 380, branches, 3*Math.PI/2);  //will add later
-  System.out.println(branches);
 } 
 
 public void keyPressed(){
   if(key == CODED){
     if(keyCode == UP){
-      // branches = branches + 10;
       branchAngle += 0.1;
     }
     else if (keyCode == DOWN){
-      // branches = branches - 10;
       branchAngle -= 0.1;
     }
   }
 }
-
-
-
-
 
 public void drawBranches(int x,int y, double branchLength, double angle) 
 {   
