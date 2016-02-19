@@ -12,7 +12,7 @@ public void draw()
   branchAngle = mouseY * 0.0012  + 0.06;
   background(0);   
   stroke(189, 255, 220);   
-  strokeWeight(.3);
+  strokeWeight(.45);
   line(320, 480, 320, 380);   
   drawBranches(320, 380, branches, 3*Math.PI/2);  //will add later
   if(branchAngle > 0.9) branchAngle = 0.9;
@@ -39,7 +39,7 @@ public void drawBranches(int x,int y, double branchLength, double angle)
   int endY1 = (int)(branchLength*Math.sin(angle1) + y);
   int endX2 = (int)(branchLength*Math.cos(angle2) + x);
   int endY2 = (int)(branchLength*Math.sin(angle2) + y);
-  strokeWeight(.3);
+  strokeWeight(.45);
   line(x, y, endX1, endY1);
   line(x, y, endX2, endY2);
   if(branchLength > smallestBranch){
