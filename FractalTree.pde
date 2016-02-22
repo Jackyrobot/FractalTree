@@ -2,14 +2,15 @@ private double fractionLength = .8;
 private int smallestBranch = 10;  
 public int branches = 90;
 double branchAngle; 
-
+double newAngle;
 public void setup() 
 {   
   size(640, 450);    
 } 
 public void draw() 
 {   
-  branchAngle = mouseY * 0.0012  + 0.06;
+  branchAngle = mouseY * 0.002  + 0.2;
+  newAngle = (float)mouseX/(float)width;
   background(0);   
   stroke(189, 255, 220);   
   strokeWeight(.45);
@@ -32,8 +33,8 @@ public void keyPressed(){
 
 public void drawBranches(int x,int y, double branchLength, double angle) 
 {   
-  double angle1 = angle + branchAngle;
-  double angle2 = angle - branchAngle;
+  double angle1 = angle + branchAngle * newAngle;
+  double angle2 = angle - branchAngle * (1-newAngle); 
   branchLength = branchLength * fractionLength;
   int endX1 = (int)(branchLength*Math.cos(angle1) + x);
   int endY1 = (int)(branchLength*Math.sin(angle1) + y);
